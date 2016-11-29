@@ -12,7 +12,7 @@ var mtype = function mtype(typePredicates) {
   };
 
   var isOnly = function isOnly(subject, typename) {
-    return is(subject[typename]) && allOf(subject).length === 1;
+    return is(subject, typename) && allOf(subject).length === 1;
   };
 
   var some = function some(subject) {

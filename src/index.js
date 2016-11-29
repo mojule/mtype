@@ -11,7 +11,7 @@ const mtype = typePredicates => {
     typePredicates[ typename ] && typePredicates[ typename ]( subject )
 
   const isOnly = ( subject, typename ) =>
-    is( subject[ typename ] ) && allOf( subject ).length === 1
+    is( subject, typename ) && allOf( subject ).length === 1
 
   const some = ( subject, ...typenames ) =>
     typenames.some( typename => is( subject, typename ) )
