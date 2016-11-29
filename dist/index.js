@@ -11,6 +11,10 @@ var mtype = function mtype(typePredicates) {
     return typePredicates[typename] && typePredicates[typename](subject);
   };
 
+  var isOnly = function isOnly(subject, typename) {
+    return is(subject[typename]) && allOf(subject).length === 1;
+  };
+
   var some = function some(subject) {
     for (var _len = arguments.length, typenames = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
       typenames[_key - 1] = arguments[_key];
@@ -47,7 +51,7 @@ var mtype = function mtype(typePredicates) {
     return keys.slice();
   };
 
-  return { is: is, some: some, every: every, of: of, allOf: allOf, types: types };
+  return { is: is, isOnly: isOnly, some: some, every: every, of: of, allOf: allOf, types: types };
 };
 
 module.exports = mtype;

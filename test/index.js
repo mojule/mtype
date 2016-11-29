@@ -86,6 +86,13 @@ describe( 'js types', () => {
 
   const t = T( jsPredicates )
 
+  describe( 'isOnly', () => {
+    it( 'is one type and one type only', () => {
+      assert( t.isOnly( {}, 'object' ) )
+      assert( !t.isOnly( [], 'array' ) )
+    })
+  })
+
   describe( 'some', () => {
     it( 'has some of the types', () => {
       assert( t.some( {}, 'array', 'object' ) )

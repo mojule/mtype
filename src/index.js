@@ -10,6 +10,9 @@ const mtype = typePredicates => {
   const is = ( subject, typename ) =>
     typePredicates[ typename ] && typePredicates[ typename ]( subject )
 
+  const isOnly = ( subject, typename ) =>
+    is( subject[ typename ] ) && allOf( subject ).length === 1
+
   const some = ( subject, ...typenames ) =>
     typenames.some( typename => is( subject, typename ) )
 
@@ -24,7 +27,7 @@ const mtype = typePredicates => {
 
   const types = () => keys.slice()
 
-  return { is, some, every, of, allOf, types }
+  return { is, isOnly, some, every, of, allOf, types }
 }
 
 module.exports = mtype

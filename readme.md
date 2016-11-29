@@ -21,6 +21,10 @@ const t = T( predicates )
 // subject passes test for type?
 console.log( t.is( subject, 'typename' ) )
 
+// isOnly(subject:Any,typename:String)=>matchesType:Boolean
+// subject passes test for type and doesn't pass any others
+console.log( t.isOnly( subject, 'typename' ) )
+
 // some(subject:Any,typenames:...String)=>matchesSome:Boolean
 // subject matches at least one of the required types
 console.log( t.some( subject, 'type1', 'type2', 'type3' ) )
