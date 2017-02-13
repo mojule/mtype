@@ -1,6 +1,6 @@
 {
   "name": "mtype",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Type checking facade",
   "main": "index.js",
   "typings": "./dist/index.d.ts",
