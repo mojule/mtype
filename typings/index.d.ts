@@ -88,7 +88,5 @@ declare namespace mtype {
   export function create(predicates: typePredicates): api
 }
 
-declare var mtype: mtype.create
 
-
-export = mtype
+export = mtype.create
